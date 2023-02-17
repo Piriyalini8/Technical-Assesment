@@ -32,4 +32,13 @@ public class UserService implements IUserService{
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+    
+    @Override
+    public User getUserByEmail(String email) {
+    	Optional<User> optionalUser = userRepository.findByEmail(email);
+    	if(optionalUser.isEmpty()) {
+            return null;
+        }
+        return optionalUser.get();
+    }
 }

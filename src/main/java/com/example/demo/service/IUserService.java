@@ -8,4 +8,5 @@ public interface IUserService {
     User saveUser(User user);
     User getUserById(int id);
     List<User> getAllUsers();
+    User getUserByEmail(String email);
 }
